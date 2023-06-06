@@ -1,0 +1,60 @@
+/* Service custom */
+.services .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services .content ul li {
+  padding: 0 0 10px 30px;
+  position: relative;
+}
+
+.services .content ul i {
+  position: absolute;
+  font-size: 20px;
+  left: 0;
+  top: -3px;
+  color: var(--color-primary);
+}
+
+.services .content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Acordion custom */
+
+.faq .accordion-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.faq .accordion-body ul li {
+  padding: 0 0 10px 30px;
+  position: relative;
+}
+
+.faq .accordion-body ul i {
+  position: absolute;
+  font-size: 15px;
+  left: 0;
+  top: -3px;
+  color: var(--color-primary);
+}
+
+.faq .accordion-body p {
+  font-size: 14px;
+}
+
+@media (max-width: 400px) {
+  .about-text p {
+    text-align: justify;
+  }
+
+  .about-us {
+    flex-direction: row-reverse !important;
+  }
+}
+
+.text-justify {
+  text-align: justify;
+}
