@@ -58,3 +58,34 @@
 .text-justify {
   text-align: justify;
 }
+
+.scroll-whatsapp {
+  position: fixed;
+  visibility: visible;
+  opacity: 0;
+  right: 15px;
+  bottom: -70px;
+  z-index: 99999;
+  background: #128c7e;
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.scroll-whatsapp i {
+  font-size: 20px;
+  color: #fff;
+  line-height: 0;
+}
+
+.scroll-whatsapp:hover {
+  background: #25d366;
+  color: #fff;
+}
+
+.scroll-whatsapp.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 70px;
+}

@@ -1,12 +1,12 @@
 /**
-* Template Name: Impact
-* Updated: May 30 2023 with Bootstrap v5.3.0
-* Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+ * Template Name: Impact
+ * Updated: May 30 2023 with Bootstrap v5.3.0
+ * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
+ * Author: BootstrapMade.com
+ * License: https://bootstrapmade.com/license/
+ */
 document.addEventListener('DOMContentLoaded', () => {
-  "use strict";
+  ('use strict');
 
   /**
    * Preloader
@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let nextElement = selectHeader.nextElementSibling;
 
     const headerFixed = () => {
-      if ((headerOffset - window.scrollY) <= 0) {
+      if (headerOffset - window.scrollY <= 0) {
         selectHeader.classList.add('sticked');
         if (nextElement) nextElement.classList.add('sticked-header-offset');
       } else {
         selectHeader.classList.remove('sticked');
         if (nextElement) nextElement.classList.remove('sticked-header-offset');
       }
-    }
+    };
     window.addEventListener('load', headerFixed);
     document.addEventListener('scroll', headerFixed);
   }
@@ -45,8 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let navbarlinks = document.querySelectorAll('#navbar a');
 
   function navbarlinksActive() {
-    navbarlinks.forEach(navbarlink => {
-
+    navbarlinks.forEach((navbarlink) => {
       if (!navbarlink.hash) return;
 
       let section = document.querySelector(navbarlink.hash);
@@ -54,12 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let position = window.scrollY + 200;
 
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+      if (position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight) {
         navbarlink.classList.add('active');
       } else {
         navbarlink.classList.remove('active');
       }
-    })
+    });
   }
   window.addEventListener('load', navbarlinksActive);
   document.addEventListener('scroll', navbarlinksActive);
@@ -70,11 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavShow = document.querySelector('.mobile-nav-show');
   const mobileNavHide = document.querySelector('.mobile-nav-hide');
 
-  document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
-    el.addEventListener('click', function(event) {
+  document.querySelectorAll('.mobile-nav-toggle').forEach((el) => {
+    el.addEventListener('click', function (event) {
       event.preventDefault();
       mobileNavToogle();
-    })
+    });
   });
 
   function mobileNavToogle() {
@@ -86,8 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Hide mobile nav on same-page/hash links
    */
-  document.querySelectorAll('#navbar a').forEach(navbarlink => {
-
+  document.querySelectorAll('#navbar a').forEach((navbarlink) => {
     if (!navbarlink.hash) return;
 
     let section = document.querySelector(navbarlink.hash);
@@ -98,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileNavToogle();
       }
     });
-
   });
 
   /**
@@ -106,8 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const navDropdowns = document.querySelectorAll('.navbar .dropdown > a');
 
-  navDropdowns.forEach(el => {
-    el.addEventListener('click', function(event) {
+  navDropdowns.forEach((el) => {
+    el.addEventListener('click', function (event) {
       if (document.querySelector('.mobile-nav-active')) {
         event.preventDefault();
         this.classList.toggle('active');
@@ -117,14 +114,14 @@ document.addEventListener('DOMContentLoaded', () => {
         dropDownIndicator.classList.toggle('bi-chevron-up');
         dropDownIndicator.classList.toggle('bi-chevron-down');
       }
-    })
+    });
   });
 
   /**
    * Initiate glightbox
    */
   const glightbox = GLightbox({
-    selector: '.glightbox'
+    selector: '.glightbox',
   });
 
   /**
@@ -132,15 +129,30 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const scrollTop = document.querySelector('.scroll-top');
   if (scrollTop) {
-    const togglescrollTop = function() {
+    const togglescrollTop = function () {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-    }
+    };
     window.addEventListener('load', togglescrollTop);
     document.addEventListener('scroll', togglescrollTop);
-    scrollTop.addEventListener('click', window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    }));
+    scrollTop.addEventListener(
+      'click',
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      })
+    );
+  }
+
+  /**
+   * Scroll top Whatsapp
+   */
+  const scrollTopWhatsapp = document.querySelector('.scroll-whatsapp');
+  if (scrollTopWhatsapp) {
+    const togglescrollTopWhatsapp = function () {
+      window.scrollY > 100 ? scrollTopWhatsapp.classList.add('active') : scrollTopWhatsapp.classList.remove('active');
+    };
+    window.addEventListener('load', togglescrollTopWhatsapp);
+    document.addEventListener('scroll', togglescrollTopWhatsapp);
   }
 
   /**
@@ -156,32 +168,32 @@ document.addEventListener('DOMContentLoaded', () => {
     loop: true,
     autoplay: {
       delay: 5000,
-      disableOnInteraction: false
+      disableOnInteraction: false,
     },
     slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
-      clickable: true
+      clickable: true,
     },
     breakpoints: {
       320: {
         slidesPerView: 2,
-        spaceBetween: 40
+        spaceBetween: 40,
       },
       480: {
         slidesPerView: 3,
-        spaceBetween: 60
+        spaceBetween: 60,
       },
       640: {
         slidesPerView: 4,
-        spaceBetween: 80
+        spaceBetween: 80,
       },
       992: {
         slidesPerView: 6,
-        spaceBetween: 120
-      }
-    }
+        spaceBetween: 120,
+      },
+    },
   });
 
   /**
@@ -192,18 +204,18 @@ document.addEventListener('DOMContentLoaded', () => {
     loop: true,
     autoplay: {
       delay: 5000,
-      disableOnInteraction: false
+      disableOnInteraction: false,
     },
     slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
-      clickable: true
+      clickable: true,
     },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
-    }
+    },
   });
 
   /**
@@ -214,13 +226,13 @@ document.addEventListener('DOMContentLoaded', () => {
     loop: true,
     autoplay: {
       delay: 5000,
-      disableOnInteraction: false
+      disableOnInteraction: false,
     },
     slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
-      clickable: true
+      clickable: true,
     },
     navigation: {
       nextEl: '.swiper-button-next',
@@ -229,13 +241,13 @@ document.addEventListener('DOMContentLoaded', () => {
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 40
+        spaceBetween: 40,
       },
 
       1200: {
         slidesPerView: 3,
-      }
-    }
+      },
+    },
   });
 
   /**
@@ -244,7 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let portfolionIsotope = document.querySelector('.portfolio-isotope');
 
   if (portfolionIsotope) {
-
     let portfolioFilter = portfolionIsotope.getAttribute('data-portfolio-filter') ? portfolionIsotope.getAttribute('data-portfolio-filter') : '*';
     let portfolioLayout = portfolionIsotope.getAttribute('data-portfolio-layout') ? portfolionIsotope.getAttribute('data-portfolio-layout') : 'masonry';
     let portfolioSort = portfolionIsotope.getAttribute('data-portfolio-sort') ? portfolionIsotope.getAttribute('data-portfolio-sort') : 'original-order';
@@ -254,25 +265,27 @@ document.addEventListener('DOMContentLoaded', () => {
         itemSelector: '.portfolio-item',
         layoutMode: portfolioLayout,
         filter: portfolioFilter,
-        sortBy: portfolioSort
+        sortBy: portfolioSort,
       });
 
       let menuFilters = document.querySelectorAll('.portfolio-isotope .portfolio-flters li');
-      menuFilters.forEach(function(el) {
-        el.addEventListener('click', function() {
-          document.querySelector('.portfolio-isotope .portfolio-flters .filter-active').classList.remove('filter-active');
-          this.classList.add('filter-active');
-          portfolioIsotope.arrange({
-            filter: this.getAttribute('data-filter')
-          });
-          if (typeof aos_init === 'function') {
-            aos_init();
-          }
-        }, false);
+      menuFilters.forEach(function (el) {
+        el.addEventListener(
+          'click',
+          function () {
+            document.querySelector('.portfolio-isotope .portfolio-flters .filter-active').classList.remove('filter-active');
+            this.classList.add('filter-active');
+            portfolioIsotope.arrange({
+              filter: this.getAttribute('data-filter'),
+            });
+            if (typeof aos_init === 'function') {
+              aos_init();
+            }
+          },
+          false
+        );
       });
-
     });
-
   }
 
   /**
@@ -283,11 +296,10 @@ document.addEventListener('DOMContentLoaded', () => {
       duration: 1000,
       easing: 'ease-in-out',
       once: true,
-      mirror: false
+      mirror: false,
     });
   }
   window.addEventListener('load', () => {
     aos_init();
   });
-
 });
